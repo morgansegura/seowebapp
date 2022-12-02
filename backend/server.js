@@ -8,6 +8,7 @@ require('dotenv').config();
 
 // [Routes]
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 const blogRoutes = require('./routes/blog');
 
 // [App]
@@ -32,6 +33,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 // [Routes Middleware]
 app.use('/api', authRoutes);
+app.use('/api', userRoutes);
 app.use('/api', blogRoutes);
 
 // [Port]

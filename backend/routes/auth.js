@@ -23,7 +23,7 @@ router.post('/signout', signout);
 // [Secret]
 router.get('/secret', requireSignin, (req, res) => {
     res.json({
-        message: 'You have access to this secret page. Lucky.',
+        user: req.auth,
     });
 });
 
