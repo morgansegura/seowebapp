@@ -1,0 +1,17 @@
+{
+    "name": "seowebapp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev-backend": "cd backend && npm run dev",
+        "dev-frontend": "cd frontend && npm run dev",
+        "dev": "concurrently \"npm run dev-frontend\" \"npm run dev-backend\"",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^7.6.0"
+    }
+}
