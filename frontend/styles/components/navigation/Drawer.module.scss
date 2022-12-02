@@ -1,0 +1,233 @@
+@import 'utilities';
+
+.drawer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    @include inset;
+
+    &.drawer--is-hidden {
+        z-index: -1001;
+        pointer-events: none;
+        user-select: none;
+        transition: z-index 0.4s ease-out;
+
+        .drawer-container {
+            // height: 100vh;
+            transition: transform 0.3s ease-out;
+        }
+
+        &.drawer-top {
+            .drawer-container {
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: auto;
+                // height: 300px;
+                transform: translateY(-3100%);
+            }
+        }
+
+        &.drawer-bottom {
+            .drawer-container {
+                top: auto;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                // height: 300px;
+                transform: translateY(100%);
+            }
+        }
+        &.drawer-right {
+            .drawer-container {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: auto;
+                height: 100vh;
+                transform: translateX(100%);
+            }
+        }
+        &.drawer-left {
+            .drawer-container {
+                top: 0;
+                right: auto;
+                bottom: 0;
+                left: 0;
+                height: 100vh;
+                width: 100%;
+                // max-width: 300px;
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    &.drawer--is-visible {
+        z-index: 1001;
+
+        .drawer-container {
+            transition: transform 0.3s ease-in;
+        }
+
+        &.drawer-top {
+            .drawer-container {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: auto;
+                transform: translateY(0);
+            }
+        }
+
+        &.drawer-bottom {
+            .drawer-container {
+                top: auto;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transform: translateY(0);
+            }
+        }
+
+        &.drawer-right {
+            .drawer-container {
+                top: 0;
+                right: 0;
+                left: auto;
+                bottom: 0;
+                height: 100vh;
+                transform: translateX(0);
+            }
+        }
+
+        &.drawer-left {
+            .drawer-container {
+                top: 0;
+                right: auto;
+                left: 0;
+                bottom: 0;
+                height: 100vh;
+                transform: translateX(0);
+            }
+        }
+
+        &.drawer-bottom {
+            .drawer-container {
+                transform: translateY(0);
+            }
+        }
+
+        &.drawer-left {
+            .drawer-container {
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.drawer-container {
+    position: absolute;
+    z-index: 1001;
+    @include shadow-dropdown;
+}
+
+.drawer-noselect {
+    pointer-events: none;
+    user-select: none;
+}
+
+.drawer-content {
+    @include flex(center);
+    flex-direction: column;
+}
+
+.drawer-trigger {
+    cursor: pointer;
+}
+
+.drawer-close {
+    position: absolute;
+    z-index: 1001;
+    cursor: pointer;
+    top: $sp-3;
+    right: $sp-3;
+    transform-origin: 0 0;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+    display: flex;
+    @include rounded(sm);
+    padding: 2px;
+
+    .drawer-right & {
+        top: $sp-3;
+        right: auto;
+        left: $sp-3;
+    }
+
+    .theme-light &,
+    .accessories-light & {
+        background-color: $slate-200;
+        color: $white;
+
+        &:hover {
+            background-color: $slate-300;
+            color: $slate-800;
+        }
+        &:active {
+            background-color: $slate-200;
+            color: $slate-400;
+        }
+    }
+    .theme-dark &,
+    .accessories-dark & {
+        background-color: $slate-700;
+        color: $slate-100;
+
+        &:hover {
+            background-color: $slate-600;
+            color: $white;
+        }
+        &:active {
+            background-color: $slate-700;
+            color: $slate-100;
+        }
+    }
+
+    svg {
+        width: $sp-2_5;
+        height: $sp-2_5;
+        user-select: none;
+    }
+}
+
+.drawer-content-fill {
+    flex: 1 0 auto;
+}
+
+.backdrop {
+    &.backdrop--is-hidden {
+        z-index: -1000;
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+    }
+
+    &.backdrop--is-visible {
+        z-index: 1000;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+    }
+}
+
+.drawer-header {
+    padding-bottom: $sp-3;
+}
+
+.drawer-title {
+    color: $black;
+    @include fontSizing(22px, 36px, 900);
+    text-align: center;
+}
+.drawer-copy {
+    @include fontSizing(16px, 24px);
+    color: $slate-500;
+    text-align: center;
+}

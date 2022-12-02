@@ -1,0 +1,88 @@
+@import 'utilities';
+
+.wrapper {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.sidebarIsClosed {
+        overflow-y: unset;
+    }
+
+    &.sidebarIsOpen {
+        overflow-y: hidden;
+    }
+}
+
+.main {
+    position: relative;
+    flex: 1 0 auto;
+    order: 1;
+    display: flex;
+    overflow-y: auto;
+    transition: opacity 0.3s ease-out;
+
+    .sidebarIsClosed & {
+        opacity: 1;
+    }
+    .sidebarIsOpen & {
+        height: auto;
+        opacity: 0.25;
+    }
+}
+
+.contain {
+    position: relative;
+    order: 2;
+    width: 100%;
+
+    .sidebarIsClosed & {
+    }
+    .sidebarIsOpen & {
+    }
+}
+
+.content {
+    .sidebarIsClosed & {
+        transition: transform 0.3s ease-out;
+    }
+
+    .sidebarIsOpen & {
+        transition: transform 0.3s ease-in;
+    }
+}
+
+.backdrop {
+    position: fixed;
+    z-index: -1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    user-select: none;
+    cursor: default;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($slate-900, 0.25);
+        cursor: pointer;
+    }
+
+    .sidebarIsClosed & {
+        transition: opacity 0.3s ease-out;
+    }
+
+    .sidebarIsOpen & {
+        z-index: 1000;
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in;
+    }
+}

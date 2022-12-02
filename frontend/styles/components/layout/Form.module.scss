@@ -1,0 +1,96 @@
+@import 'utilities';
+
+// [Form]
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    @include spacing(p, $sp-3);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    img {
+        margin-right: auto;
+        margin-left: auto;
+        height: $sp-6;
+        width: auto;
+    }
+}
+
+.title {
+    margin-top: $sp-4;
+    text-align: center;
+    @include fontSizing(32px, 36px);
+    font-weight: 600;
+}
+
+.subtitle {
+    margin-top: $sp-0_5;
+    text-align: center;
+    @include fontSizing(22px, 30px);
+    font-weight: 600;
+}
+
+.copy {
+    margin-top: $sp-0_5;
+    margin-bottom: $sp-3;
+    text-align: center;
+    @include fontSizing(14px, 24px);
+}
+
+// [Field Group]
+
+.form-content {
+    display: grid;
+    gap: $sp-2;
+    margin-top: $sp-4;
+}
+
+.field-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $sp-2;
+
+    &.cols-2 {
+        @include md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &.cols-3 {
+        @include md {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &.cols-4 {
+        @include md {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+// [Messages]
+.form-message {
+    display: inline-flex;
+    margin-left: auto;
+    @include spacing(px, $sp-1_5);
+    padding-top: 0;
+    padding-bottom: $sp-0_5;
+    @include fontSizing(14px, 24px);
+    background-color: $slate-100;
+    border-radius: 0 0 $sp-2 $sp-2;
+}
+
+.toggle-account-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $slate-100;
+    padding-top: $sp-1_5;
+    padding-bottom: $sp-1_5;
+    margin-top: $sp-1_5;
+    @include rounded(lg);
+}

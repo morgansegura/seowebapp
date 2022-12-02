@@ -1,0 +1,120 @@
+@import 'utilities';
+
+.hero-slider {
+    // overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: $slate-900;
+}
+.hero-slider-container {
+}
+.hero-slider-navigation {
+    position: absolute;
+    z-index: 1;
+    @include inset;
+    display: flex;
+    align-items: center;
+}
+.hero-slider-navigation-bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: $sp-0_5;
+}
+.hero-slider-navigation-bullet {
+    width: $sp-1;
+    height: $sp-1;
+    @include rounded(circle);
+}
+.hero-slider-navigation-arrow-prev,
+.hero-slider-navigation-arrow-next {
+    position: absolute;
+    @include flex(center, center);
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.85;
+    transition: opacity 0.3s ease-out;
+
+    svg {
+        width: $sp-8;
+        height: $sp-8;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        opacity: 1;
+        svg {
+            transform: scale(1);
+        }
+    }
+
+    &:active {
+        svg {
+            transform: scale(0.75);
+        }
+    }
+
+    .hero-slider-light & {
+        color: $white;
+    }
+    .hero-slider-dark & {
+        color: $black;
+    }
+
+    &.disabled {
+        opacity: 0.125;
+        transform: scale(1);
+        user-select: none;
+        pointer-sevents: none;
+    }
+}
+.hero-slider-navigation-arrow-prev {
+    left: 0;
+}
+.hero-slider-navigation-arrow-next {
+    right: 0;
+}
+
+// [Slide]
+.slide {
+    display: flex;
+    justify-content: flex-start;
+}
+.slide-container {
+    @include gridcols(2);
+    @include spacing(py, $sp-4);
+    @include spacing(px, $sp-8);
+}
+.slide-content {
+    @include cols(1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.slide-subtitle {
+}
+.slide-title {
+}
+.slide-copy {
+}
+.slide-button-container {
+}
+.slide-button {
+}
+.slide-button-caption {
+}
+.slide-image-container {
+    @include cols(2);
+}
+.slide-image {
+    img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,570 @@
+// import { css } from 'styled-components';
+// import { math, em, rem } from 'polished';
+// import { getThemeData } from '@utils/helpers';
+
+// export const font = {
+//     body: `'${
+//         getThemeData('fonts', true).body
+//     }', Helvetica, 'Helvetica Neue', sans-serif`,
+//     heading: `'${getThemeData('fonts', true).heading}', '${
+//         getThemeData('fonts', true).body
+//     }', sans-serif`,
+//     baseSize: `${getThemeData('fonts', true).base}`,
+// };
+
+// export const sp = {
+//     '1p': '1px',
+//     '2p': '2px',
+//     0.5: '4px',
+//     0.75: '6px',
+//     1: '8px',
+//     1.25: '10px',
+//     1.5: '12px',
+//     2: '16px',
+//     2.5: '20px',
+//     3: '24px',
+//     3.5: '28px',
+//     4: '32px',
+//     4.5: '36px',
+//     5: '40px',
+//     5.5: '44px',
+//     6: '48px',
+//     6.5: '52px',
+//     7: '56px',
+//     7.5: '60px',
+//     8: '64px',
+//     9: '72px',
+//     9.5: '76px',
+//     10: '80px',
+//     11: '88px',
+//     11.5: '92px',
+//     12: '96px',
+//     13: '104px',
+//     14: '112px',
+//     14.5: '116px',
+//     15: '120px',
+//     16: '128px',
+//     17: '136px',
+//     18: '144px',
+//     18.5: '148px',
+//     19: '152px',
+//     20: '160px',
+//     25: '200px',
+//     28: '224px',
+//     30: '240px',
+//     40: '320px',
+//     60: '480px',
+//     80: '640px',
+// };
+// // Spacing
+
+// // Contain [max-width]
+// export const contain = {
+//     xs: '320px',
+//     sm: '639px',
+//     md: '1023px',
+//     lg: '1366px',
+//     xl: '1799px',
+//     xxl: '2256px',
+//     offset: '2384px',
+// };
+
+// // Device Contain [min-width]
+// export const device = {
+//     mobile: '414px',
+//     tablet: '640px',
+//     desktop: { sm: '1024px', md: '1376px', lg: '1800px' },
+// };
+
+// // Colors
+// export const brand = {
+//     black: '#000',
+//     white: '#fff',
+//     cta: {
+//         light: '#ffcb5d',
+//         main: '#FFBE35',
+//         dark: '#ffb416',
+//     },
+// };
+
+// // System Neutral
+// export const neutral = {
+//     0: '#f6f7f7',
+//     5: '#edeef0',
+//     6: '#dbdde1',
+//     7: '#c9cbd2',
+//     8: '#b8bac3',
+//     9: '#a6a9b3',
+//     10: '#9498a4',
+//     20: '#828795',
+//     30: '#717685',
+//     40: '#626673',
+//     50: '#535661',
+//     60: '#434650',
+//     70: '#34373e',
+//     80: '#25272c',
+//     90: '#1e2024',
+// };
+
+// // Premier Laegue
+// export const plBlue = {
+//     light: '#bae6ff',
+//     main: '#30b5fe',
+//     dark: '#0175b4',
+// };
+// export const plPink = {
+//     light: '#ff70ac',
+//     main: '#ff2882',
+//     dark: '#b1004a',
+// };
+// export const plPurple = {
+//     light: '#7c0087',
+//     main: '#37003c',
+//     dark: '#210024',
+// };
+// export const plGreen = {
+//     light: '#81fce1',
+//     main: '#05f7c2',
+//     dark: '#04c69b',
+// };
+// // La Liga
+// export const llBlue = {
+//     light: '#c9ecf5',
+//     main: '#92daec',
+//     dark: '#22a3c3',
+// };
+
+// // System Red
+// export const red = {
+//     light: '#e85059',
+//     main: '#e32d38',
+//     dark: '#a8161f',
+// };
+
+// // System Yellow
+// export const yellow = {
+//     light: '#ffd091',
+//     main: '#FFA022',
+//     dark: '#e78400',
+// };
+
+// // System Green
+// export const green = {
+//     30: '#60bf87',
+//     50: '#3a8060',
+//     70: '#204b3c',
+// };
+
+// // System Blue
+// export const blue = {
+//     20: '#91c0ff',
+//     50: '#2281ff',
+//     70: '#004bad',
+// };
+
+// // Radius
+// export const radius = {
+//     circle: '50%',
+//     sm: '4px',
+//     md: '8px',
+//     lg: '12px',
+//     xl: '16px',
+//     none: '0',
+// };
+
+// export const fw = {
+//     0: 'normal',
+//     1: 100,
+//     2: 200,
+//     3: 300,
+//     4: 400,
+//     5: 500,
+//     6: 600,
+//     7: 700,
+//     8: 800,
+//     9: 900,
+// };
+
+// export const zindex = {
+//     bottom: -1,
+//     1: 1,
+//     2: 2,
+//     3: 3,
+//     high: 1000,
+//     top: 1001,
+// };
+
+// export const toRem = (sp: string) => {
+//     return rem(sp);
+// };
+
+// export const toEm = (sp: string) => {
+//     return em(sp);
+// };
+
+// export const fontSizing = (
+//     fs: string = '16px',
+//     lh: string = '24px',
+//     fw: number = 400
+// ) => {
+//     return `
+// 		font-size: ${rem(fs)};
+// 		line-height: ${em(lh)};
+// 		font-weight: ${fw};
+// 	`;
+// };
+
+// export const theme = (id: string): any => {
+//     return (...args: [any]): any => css`
+//         ${(props: any) =>
+//             props.theme.id === id &&
+//             css`
+//                 ${css(...args)};
+//             `}
+//     `;
+// };
+
+// export const below = (amount: string): any => {
+//     return (...args: [any]): any => css`
+//         @media (max-width: ${amount}) {
+//             ${css(...args)};
+//         }
+//     `;
+// };
+
+// export const above = (amount: string): any => {
+//     return (...args: [any]): any => css`
+//         @media (min-width: ${amount}) {
+//             ${css(...args)};
+//         }
+//     `;
+// };
+
+// export const media: any = {
+//     sm: (...args: [any]): any => css`
+//         @media (min-width: ${device.mobile}) {
+//             ${css(...args)};
+//         }
+//     `,
+//     md: (...args: [any]): any => css`
+//         @media (min-width: ${device.tablet}) {
+//             ${css(...args)};
+//         }
+//     `,
+//     lg: (...args: [any]): any => css`
+//         @media (min-width: ${device.desktop.sm}) {
+//             ${css(...args)};
+//         }
+//     `,
+//     xl: (...args: [any]): any => css`
+//         @media (min-width: ${device.desktop.md}) {
+//             ${css(...args)};
+//         }
+//     `,
+//     xxl: (...args: [any]): any => css`
+//         @media (min-width: ${device.desktop.lg}) {
+//             ${css(...args)};
+//         }
+//     `,
+// };
+
+// export const container = {
+//     xs: css`
+//         max-width: ${rem(contain.xs)};
+//         margin-right: auto;
+//         margin-left: auto;
+//     `,
+//     sm: css`
+//         max-width: ${rem(contain.sm)};
+//         margin-right: auto;
+//         margin-left: auto;
+//     `,
+//     md: css`
+//         max-width: ${rem(contain.md)};
+//         margin-right: auto;
+//         margin-left: auto;
+//     `,
+//     lg: css`
+//         max-width: ${rem(contain.lg)};
+//         margin-right: auto;
+//         margin-left: auto;
+//     `,
+//     xl: css`
+//         max-width: ${rem(contain.xl)};
+//         margin-right: ${rem(sp[2])};
+//         margin-left: ${rem(sp[2])};
+
+//         ${media.md`
+// 			margin-right: ${rem(sp[5])};
+// 			margin-left: ${rem(sp[5])};
+// 		`}
+
+//         ${media.xl`
+// 			margin-right: ${rem(sp[14])};
+// 			margin-left: ${rem(sp[14])};
+// 		`}
+
+// 		${media.xxl`
+// 			margin-right: ${rem(sp[20])};
+// 			margin-left: ${rem(sp[20])};
+// 		`}
+
+// 		${above(contain.offset)`
+// 			max-width: ${math(`${rem(contain.xxl)} - ${rem(sp['40'])}`)};
+// 			margin-right: auto;
+// 			margin-left: auto;
+// 		`}
+//     `,
+//     xxl: css`
+//         max-width: ${rem(contain.xxl)};
+//         margin-right: ${rem(sp[1])};
+//         margin-left: ${rem(sp[1])};
+
+//         ${media.md`
+// 			margin-right: ${rem(sp[3])};
+// 			margin-left: ${rem(sp[3])};
+// 		`}
+
+//         ${media.lg`
+// 			margin-right: ${rem(sp[6])};
+// 			margin-left: ${rem(sp[6])};
+// 		`}
+
+// 		${media.xl`
+// 			margin-right: ${rem(sp[8])};
+// 			margin-left: ${rem(sp[8])};
+// 		`}
+
+// 		${above(contain.offset)`
+// 			width: ${rem(contain.xxl)};
+// 			margin-right: auto;
+// 			margin-left: auto;
+// 		`}
+//     `,
+//     appbar: css`
+//         max-width: ${rem(contain.xxl)};
+//         margin-right: ${rem(sp[2])};
+//         margin-left: ${rem(sp[2])};
+
+//         ${media.md`
+// 			margin-right: ${rem(sp[3])};
+// 			margin-left: ${rem(sp[3])};
+// 		`}
+
+//         ${media.lg`
+// 			margin-right: ${rem(sp[4])};
+// 			margin-left: ${rem(sp[4])};
+// 		`}
+
+// 		${media.xxl`
+// 			margin-right: ${rem(sp[5])};
+// 			margin-left: ${rem(sp[5])};
+// 		`}
+//     `,
+// };
+
+// export const base = css`
+//     font-size: ${font.baseSize};
+// `;
+
+// export const h1 = css`
+//     font-family: ${font.heading};
+//     ${fontSizing('32px', '18.4px')};
+//     ${fw[6]};
+
+//     ${media.md`
+//         ${fontSizing('48px', '18.4px')};
+// 	`}
+
+//     ${media.lg`
+//         ${fontSizing('52px', '18.4px')};
+// 	`}
+// `;
+
+// export const h2 = css`
+//     font-family: ${font.heading};
+//     ${fontSizing('28px', '18.4px')};
+//     ${fw[6]};
+
+//     ${media.md`
+//         ${fontSizing('40px', '18.4px')};
+// 	`}
+
+//     ${media.lg`
+//         ${fontSizing('40px', '18.4px')};
+// 	`}
+// `;
+
+// export const h3 = css`
+//     font-family: ${font.heading};
+//     ${fontSizing('25px', '18.4px')};
+//     ${fw[6]};
+
+//     ${media.lg`
+//         ${fontSizing('32px', '18.4px')};
+// 	`}
+// `;
+
+// export const h4 = css`
+//     font-family: ${font.heading};
+//     ${fontSizing('22px', '17.92px')};
+//     ${fw[6]};
+
+//     ${media.md`
+//         ${fontSizing('25px', '17.92px')};
+// 	`}
+// `;
+
+// export const h5 = css`
+//     font-family: ${font.heading};
+//     ${fontSizing('18px', '17.92px')};
+//     ${fw[6]};
+
+//     ${media.md`
+//         ${fontSizing('20px', '22.4px')};
+// 	`}
+// `;
+
+// export const body = {
+//     base: css`
+//         ${fontSizing('16px', '24px')};
+//         ${fw[4]};
+
+//         ${media.md`
+//             ${fontSizing('18px', '24.8px')};
+// 		`}
+
+//         ${media.lg`
+//             ${fontSizing('20px', '24px')};
+// 		`}
+//     `,
+//     large: css`
+//         ${fontSizing('25px', '24px')};
+//         ${fw[4]};
+
+//         ${media.lg`
+//             ${fontSizing('28px', '24px')};
+// 		`}
+//     `,
+//     bold: css`
+//         ${fontSizing('16px', '24px')};
+//         ${fw[6]};
+
+//         ${media.md`
+//             ${fontSizing('18px', '24.8px')};
+// 		`}
+
+//         ${media.lg`
+//             ${fontSizing('20px', '24.8px')};
+// 		`}
+//     `,
+//     small: css`
+//         ${fontSizing('14px', '24px')};
+//         font-size: ${rem('14px')};
+//         ${fw[4]};
+
+//         ${media.md`
+//             ${fontSizing('16px', '24px')};
+// 		`}
+//     `,
+//     'small-bold': css`
+//         ${fontSizing('14px', '24px')};
+//         ${fw[6]};
+
+//         ${media.md`
+//             ${fontSizing('16px', '24px')};
+// 		`}
+//     `,
+// };
+
+// // Breadcrumbs, buttons, icon labels, and tabs
+// export const callToAction = css`
+//     ${fontSizing('15px', '19.2px')};
+//     ${fw[6]};
+
+//     ${media.md`
+//         ${fontSizing('16px', '19.2px')};
+// 	`}
+// `;
+
+// export const label = css`
+//     ${fontSizing('14px', '19.2px')};
+//     ${fw[4]};
+// `;
+
+// export const tag = {
+//     base: css`
+//         ${fontSizing('14px', '20px')};
+//         ${fw[4]};
+//     `,
+//     important: css`
+//         ${fontSizing('12px', '20px')};
+//         ${fw[6]};
+//         letter-spacing: 1px;
+//         text-transform: uppercase;
+//     `,
+//     bold: css`
+//         ${fontSizing('14px', '20px')};
+//         ${fw[6]};
+//     `,
+// };
+
+// export const grid = (
+//     cols: string = '12',
+//     size: string = '1fr',
+//     gap: string = 'inherit'
+// ) => css`
+//     display: grid;
+//     grid-template-columns: repeat(${cols}, ${size});
+//     gap: ${gap};
+// `;
+
+// export const shadow = {
+//     card: css`
+//         box-shadow: 0 4.581080913543701px 22.905405044555664px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[80] : '#a4abb71f'},
+//             0 12.216216087341309px 18.324323654174805px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[90] : '#6b738424'},
+//             0 6.108108043670654px 7.635135173797607px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? brand.black : '#3e405433'};
+//     `,
+
+//     header: css`
+//         box-shadow: 0 2.2905404567718506px 10.689188957214355px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[80] : '#a4abb71f'},
+//             0 6.108108043670654px 7.635135173797607px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[90] : '#6b738424'},
+//             0 3.8175675868988037px 3.8175675868988037px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? brand.black : '#3e405433'};
+//     `,
+
+//     form: css`
+//         box-shadow: 0 3.8175675868988037px 16.79729652404785px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[80] : '#a4abb71f'},
+//             0 9.162161827087402px 12.979729652404785px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[90] : '#6b738424'},
+//             0 5.344594478607178px 6.108108043670654px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? brand.black : '#3e405433'};
+//     `,
+
+//     dropdown: css`
+//         box-shadow: 0 4.581080913543701px 22.905405044555664px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[80] : '#a4abb71f'},
+//             0 12.216216087341309px 18.324323654174805px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? neutral[90] : '#6b738424'},
+//             0 6.108108043670654px 7.635135173797607px 0
+//                 ${(props) =>
+//                     props.theme.id === 'dark' ? brand.black : '#3e405433'};
+//     `,
+// };

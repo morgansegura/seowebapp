@@ -1,0 +1,25 @@
+@import 'utilities';
+
+.text-box {
+    position: relative;
+
+    &[role='textbox'] {
+        resize: none;
+        overflow: hidden;
+        @include font(sans);
+        word-break: normal;
+        box-sizing: border-box;
+        background-color: transparent;
+        border-color: transparent;
+        @include rounded(sm);
+        border: 2px dashed transparent;
+        transition: border-color 0.3s ease-out;
+
+        &:focus-visible {
+            position: relative;
+            outline: none;
+            border-color: $rose-200;
+            transition: border-color 0.3s ease-in;
+        }
+    }
+}

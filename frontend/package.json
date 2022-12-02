@@ -1,0 +1,36 @@
+{
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "isomorphic-fetch": "^3.0.0",
+        "js-cookie": "^3.0.1",
+        "next": "13.0.5",
+        "next-auth": "^4.17.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-hook-form": "^7.40.0",
+        "react-hot-toast": "^2.4.0",
+        "react-icons": "^4.7.1",
+        "swiper": "^8.4.4"
+    },
+    "devDependencies": {
+        "@types/isomorphic-fetch": "^0.0.36",
+        "@types/js-cookie": "^3.0.2",
+        "@types/node": "18.11.10",
+        "@types/react": "18.0.25",
+        "@types/react-dom": "18.0.9",
+        "clsx": "^1.2.1",
+        "eslint": "8.28.0",
+        "eslint-config-next": "13.0.5",
+        "sass": "^1.56.1",
+        "scss": "^0.2.4",
+        "typescript": "4.9.3"
+    }
+}

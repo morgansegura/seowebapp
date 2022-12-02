@@ -1,0 +1,67 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "downlevelIteration": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+        "@actions/*": [
+            "actions/*"
+        ],
+        "@components/*": [
+            "components/*"
+        ],
+        "@config/*": [
+            "config/*"
+        ],
+        "@context/*": [
+            "context/*"
+        ],
+        "@functions/*": [
+            "functions/*"
+        ],
+        "@hooks/*": [
+            "hooks/*"
+        ],
+        "@models/*": [
+            "models/*"
+        ],
+        "@pages/*": [
+            "pages/*"
+        ],
+        "@types/*": [
+            "types/*"
+        ],
+        "@styles/*": [
+            "styles/*"
+        ],
+        "@utils/*": [
+            "utils/*"
+        ],
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "pages/api/seed.js", "pages/api/auth/[...nextauth].js", "utils/error.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,136 @@
+@import 'utilities';
+
+// [Components]
+.header {
+    z-index: 100;
+    position: relative;
+    top: $sp-1;
+    height: $sp-10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include spacing(px, $sp-1);
+    margin-bottom: $sp-1_5;
+    background-color: transparent;
+    @include spacing(px, $sp-2);
+    @include spacing(mx, $sp-1);
+    @include rounded(xl);
+    // border: 1px solid $white;
+
+    transition: all 0.3s ease-out;
+
+    &.animateStickyUp {
+        position: sticky;
+        top: $sp-2;
+        background-color: rgba($white, 0.25);
+        backdrop-filter: blur(5px);
+    }
+
+    &.animateStickyDown {
+        position: sticky;
+        top: -$sp-20;
+        background-color: rgba($white, 0.25);
+        backdrop-filter: blur(5px);
+    }
+
+    &.sidebarIsClosed {
+        transition: transform 0.3s ease-out;
+    }
+
+    &.sidebarIsOpen {
+        transition: transform 0.3s ease-in;
+    }
+}
+
+.appbar {
+    position: relative;
+    @include flex(space-between, center);
+}
+
+.logo {
+    text-decoration: none;
+    @include rounded(sm);
+
+    @include lg {
+        position: relative;
+    }
+}
+
+.logoLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    .icon {
+        display: flex;
+        width: $sp-4;
+        height: $sp-4;
+        fill: $slate-700;
+    }
+
+    .label {
+        @include fontSizing(14px, 13px, 700);
+        text-shadow: 1px 1px 0px $white, 0 0 1px $slate-800;
+        text-transform: uppercase;
+        letter-spacing: 0.05125rem;
+        display: flex;
+        color: $slate-700;
+        margin-left: $sp-1;
+    }
+}
+
+.menu-selector {
+    @include rounded(circle);
+    @include flex(center, center);
+    padding: 3px;
+    display: flex;
+    background-color: transparent;
+    color: $slate-300;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-100;
+        color: $slate-900;
+    }
+
+    svg {
+        display: flex;
+        width: $sp-3;
+        height: $sp-3;
+    }
+}
+
+.nav {
+    @include flex(center, center);
+    justify-self: flex-end;
+    gap: $sp-2;
+}
+
+.item {
+    @include fontSizing(15px, 25px, 600);
+    @include spacing(px, $sp-1);
+    @include rounded(circle);
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid transparent;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-50;
+    }
+    &.active {
+        border-color: $slate-100;
+        cursor: default;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.user {
+    margin-right: $sp-0_5;
+    @include lg {
+    }
+}

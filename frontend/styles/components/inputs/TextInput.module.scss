@@ -1,0 +1,127 @@
+@import 'utilities';
+
+// [Text Input]
+
+.text-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include rounded(md);
+    text-indent: $sp-2;
+    height: $sp-7;
+
+    &.input-withlabel {
+    }
+    &.input-with-icon {
+    }
+
+    &.input-change-focus {
+    }
+    &.input-change-blur {
+    }
+
+    input {
+        @include fontSizing(15px, 25px);
+        position: absolute;
+        overflow: hidden;
+        @include inset;
+        background-color: transparent;
+        border: 2px solid $slate-100;
+        @include rounded(md);
+        @include spacing(py, $sp-2);
+        // @include spacing(px, $sp-1);
+
+        // .input-with-icon-left & {
+        //     padding-left: $sp-5_5;
+        // }
+        // .input-with-icon-right & {
+        //     padding-right: $sp-5_5;
+        // }
+    }
+}
+
+.textarea {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-top: $sp-1_5;
+    @include rounded(md);
+    height: $sp-14;
+    text-index: $sp-2;
+
+    &.input-withlabel {
+    }
+    &.input-with-icon {
+    }
+
+    &.input-change-focus {
+    }
+    &.input-change-blur {
+    }
+
+    textarea {
+        @include fontSizing(14px, 20px);
+        position: absolute;
+        @include inset;
+        padding-left: $sp-2;
+        padding-right: $sp-2;
+        background-color: transparent;
+        @include rounded(md);
+        border: 1px solid $slate-400;
+
+        .input-with-icon-left & {
+            padding-left: $sp-5_5;
+        }
+        .input-with-icon-right & {
+            padding-right: $sp-5_5;
+        }
+    }
+}
+
+.label {
+    display: flex;
+    margin-top: $sp-2;
+    margin-bottom: $sp-0_5;
+    @include fontSizing(14px, 32px, 600);
+    letter-spacing: 0.25px;
+}
+
+.placeholder {
+    @include fontSizing(14px, 20px);
+    @include trim(1);
+    display: block;
+    flex: 1 0 auto;
+    transition: opacity 0.3s ease-out;
+
+    .input-change-focus & {
+        opacity: 0;
+    }
+    .input-change-blur & {
+        opacity: 1;
+    }
+}
+
+.icon {
+    display: flex;
+    margin-left: $sp-1_5;
+
+    .input-with-icon.input-with-icon-left & {
+        justify-content: flex-start;
+    }
+    .input-with-icon.input-with-icon-right & {
+        justify-content: flex-start;
+        order: 2;
+        padding-right: $sp-2;
+    }
+}
+.message {
+    @include fontSizing(14px, 20px);
+    color: $slate-400;
+    text-transform: none;
+}
+.error {
+}
+.input {
+    flex: 1 0 auto;
+}

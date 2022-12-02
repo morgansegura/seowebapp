@@ -1,0 +1,223 @@
+@import 'utilities';
+
+.buttonBlock {
+    display: flex;
+
+    &.right {
+        justify-content: flex-end;
+    }
+}
+
+.button {
+    cursor: pointer;
+    user-select: none;
+    padding: unset;
+
+    .full & {
+        flex: 1 0 auto;
+    }
+}
+
+.submit {
+    @include button;
+    height: $sp-8;
+    @include fontSizing(16px, 24px, 600);
+    @include rounded(lg);
+    background-color: $slate-900;
+    color: $white;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-700;
+    }
+
+    &:active {
+        background-color: $black;
+    }
+
+    &.disabled {
+        background-color: $slate-500;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.confirm {
+    @include button(4px, inline);
+    @include fontSizing(12px, 22px, 600);
+    @include spacing(py, 4px);
+    @include spacing(px, 12px);
+    background-color: $slate-900;
+    color: $white;
+}
+
+.edit-pill {
+    background-color: $slate-800;
+    color: $slate-50;
+    @include fontSizing(13px, 18px, 600);
+    letter-spacing: 0.005rem;
+    @include spacing(px, $sp-1);
+    @include rounded(sm);
+}
+
+.modal-button-primary {
+    margin-top: $sp-2;
+    height: $sp-7;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include fontSizing(16px, 24px, 600);
+    @include rounded(lg);
+    background-color: $slate-900;
+    color: $white;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-700;
+    }
+
+    &:active {
+        background-color: $black;
+    }
+
+    &.disabled {
+        background-color: $slate-500;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.tinyForm {
+    margin-left: $sp-1_5;
+    background-color: $slate-100;
+    @include fontSizing(14px, 18px);
+    @include rounded(sm);
+    padding-top: $sp-0_5;
+    padding-bottom: $sp-0_5;
+    padding-right: $sp-1;
+    padding-left: $sp-1;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-100;
+    }
+}
+
+.action-button {
+    @include fontSizing(15px, 25px, 600);
+    @include rounded(sm);
+    color: $white;
+    @include spacing(py, $sp-0_5);
+    @include spacing(px, $sp-1_5);
+    background-color: $slate-900;
+    text-decoration: none;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-700;
+    }
+    &:active {
+        background-color: $black;
+    }
+}
+
+.linkSmallPrimary {
+    margin-right: $sp-1;
+    margin-left: $sp-1;
+    text-decoration: underline;
+    transition: color 0.3s ease-out;
+
+    &:hover {
+    }
+}
+
+.crud-button-with-icon {
+    margin-top: $sp-2;
+    height: $sp-7;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include fontSizing(16px, 24px, 600);
+    @include rounded(lg);
+    background-color: $slate-900;
+    color: $white;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-700;
+    }
+
+    &:active {
+        background-color: $black;
+    }
+
+    &.disabled {
+        background-color: $slate-500;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.move-up-button {
+    background-color: $slate-300;
+    @include fontSizing(16px, 24px, 600);
+    @include rounded(sm);
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-item-button-light {
+    border: 1px solid $slate-200;
+    background-color: $slate-50;
+    @include flex(center, center);
+    flex: 1 0 auto;
+    @include rounded(sm);
+    margin-top: $sp-0_5;
+    font-weight: 600;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $white;
+    }
+}
+
+.menu-item-button-dark {
+    border: 1px solid $slate-900;
+    background-color: $slate-900;
+    color: $white;
+    @include flex(center, center);
+    flex: 1 0 auto;
+    @include rounded(sm);
+    margin-top: $sp-1;
+    font-weight: 600;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-700;
+    }
+}
+
+.auth-submit {
+    @include flex(center, center);
+    @include fontSizing(16px, 24px, 600);
+    @include spacing(py, $sp-2);
+    @include spacing(px, $sp-3);
+    @include rounded(lg);
+    background-color: $slate-900;
+    color: $slate-50;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-700;
+        color: $white;
+    }
+
+    &:active {
+        background-color: $black;
+        color: $slate-50;
+    }
+}

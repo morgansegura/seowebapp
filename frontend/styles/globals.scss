@@ -1,0 +1,453 @@
+@import 'utilities';
+
+// :root {
+//     --primary: #f5f5f4;
+//     --secondary: rgba(255, 255, 255, 0.75);
+//     --tertiary: #d4d4d4;
+// }
+// /* Firefox */
+// * {
+//     scrollbar-width: thin;
+//     scrollbar-color: var(--secondary) var(--primary);
+// }
+
+// /* Chrome, Edge, and Safari */
+// *::-webkit-scrollbar {
+//     width: $sp-1_5;
+// }
+
+// *::-webkit-scrollbar-track {
+//     background: linear-gradient(transparent, $rose-200);
+//     border-left: 2px solid rgba(0, 0, 0, 0.03);
+// }
+
+// *::-webkit-scrollbar-thumb {
+//     background-color: $slate-200;
+//     @include rounded(sm);
+//     border: 4px solid rgba(white, 1);
+// }
+
+html,
+body {
+    @include fontSizing(16px, 24px);
+    color: $slate-900;
+    @include font(body);
+}
+
+body {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: unset;
+
+    // &:after {
+    //     content: '';
+    //     position: fixed;
+    //     z-index: -1;
+    //     top: 0;
+    //     right: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     background: linear-gradient(
+    //         -13deg,
+    //         rgba(255, 255, 255, 0.95) 0%,
+    //         rgba(255, 255, 255, 0.85) 25%,
+    //         rgba(255, 255, 255, 0.65) 50%,
+    //         rgba(255, 255, 255, 0.85) 75%,
+    //         rgba(255, 255, 255, 0.95) 100%
+    //     );
+    // }
+    // &:before {
+    //     content: '';
+    //     position: fixed;
+    //     z-index: -1;
+    //     top: 0;
+    //     right: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     background-attachment: fixed;
+    //     background-color: #ff99a7;
+    //     background-image: radial-gradient(
+    //             at 36% 84%,
+    //             hsla(287, 80%, 69%, 1) 0px,
+    //             transparent 50%
+    //         ),
+    //         radial-gradient(
+    //             at 18% 69%,
+    //             hsla(267, 67%, 76%, 1) 0px,
+    //             transparent 50%
+    //         ),
+    //         radial-gradient(
+    //             at 43% 99%,
+    //             hsla(47, 63%, 73%, 1) 0px,
+    //             transparent 50%
+    //         ),
+    //         radial-gradient(
+    //             at 3% 71%,
+    //             hsla(180, 83%, 63%, 1) 0px,
+    //             transparent 50%
+    //         ),
+    //         radial-gradient(
+    //             at 40% 32%,
+    //             hsla(7, 81%, 78%, 1) 0px,
+    //             transparent 50%
+    //         ),
+    //         radial-gradient(
+    //             at 22% 36%,
+    //             hsla(241, 91%, 63%, 1) 0px,
+    //             transparent 50%
+    //         ),
+    //         radial-gradient(
+    //             at 30% 22%,
+    //             hsla(33, 93%, 71%, 1) 0px,
+    //             transparent 50%
+    //         );
+    //     background-size: 100%;
+    // }
+}
+
+div[id^='__lpform_'] {
+    display: none;
+}
+
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+i,
+b,
+a {
+    margin: inherit;
+    padding: inherit;
+}
+
+button {
+    border: inherit;
+    background-color: inherit;
+    outline: inherit;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.container-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-spaced {
+    padding-right: $sp-2;
+    padding-left: $sp-2;
+
+    @include md {
+        padding-right: $sp-3;
+        padding-left: $sp-3;
+    }
+
+    @include lg {
+        padding-right: $sp-6;
+        padding-left: $sp-6;
+    }
+
+    @include xl {
+        padding-right: $sp-8;
+        padding-left: $sp-8;
+    }
+}
+
+.card {
+    @include rounded(xl);
+    @include shadow-card;
+    border: 1px solid $slate-100;
+}
+
+.btn-primary {
+    @include button;
+
+    background-color: $purple-300;
+    color: $white;
+    &:hover {
+        background-color: $purple-400;
+    }
+
+    &:active {
+        background-color: $purple-500;
+    }
+}
+.btn-secondary {
+    @include button;
+
+    background-color: $rose-300;
+    color: $white;
+    &:hover {
+        background-color: $rose-400;
+    }
+
+    &:active {
+        background-color: $rose-500;
+    }
+}
+.btn-tertiary {
+}
+
+.primary-button {
+    @include button;
+
+    background-color: $amber-300;
+
+    &:hover {
+        background-color: $amber-400;
+    }
+
+    &:active {
+        background-color: $amber-500;
+    }
+}
+
+.default-button {
+    @include button-sm;
+    background-color: $slate-400;
+
+    &:hover {
+        background-color: $slate-500;
+    }
+
+    &:active {
+        background-color: $slate-600;
+    }
+}
+
+.btn:disabled,
+.btn-disabled {
+    user-select: none;
+    cursor: not-allowed;
+    color: $slate-200;
+    background-color: $slate-100;
+
+    &:hover {
+        color: $slate-200;
+        background-color: $slate-100;
+    }
+
+    &:active {
+        color: $slate-200;
+        background-color: $slate-100;
+    }
+}
+
+input,
+select,
+textarea {
+    -webkit-appearance: none;
+    @include rounded(sm);
+    border: none;
+    outline-color: $indigo-300;
+    all: unset;
+
+    &:focus {
+        outline-color: $indigo-300;
+        // box-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    }
+}
+
+input[id^='__lpform_'] {
+    display: none;
+}
+
+.dropdown-link {
+    display: flex;
+    padding: $sp-1;
+    &:hover {
+        background-color: $slate-200;
+    }
+}
+
+.alert-error {
+    margin-top: $sp-1_5;
+    margin-bottom: $sp-1_5;
+    background-color: $red-100;
+    color: $red-700;
+}
+
+.alert-success {
+    margin-top: $sp-1_5;
+    margin-bottom: $sp-1_5;
+    background-color: $green-100;
+    color: $green-700;
+}
+
+a {
+    color: inherit;
+    traxt-decoration: inherit;
+}
+
+.contain-xs,
+.contain-sm,
+.contain-md,
+.contain-lg,
+.contain-xl {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contain-xs {
+    max-width: $contain-xs;
+}
+
+.contain-sm {
+    max-width: $contain-sm;
+}
+
+.contain-md {
+    max-width: $contain-md;
+}
+
+.contain-lg {
+    max-width: $contain-lg;
+}
+
+.contain-xl {
+    max-width: $contain-xl;
+    margin-right: $sp-2;
+    margin-left: $sp-2;
+
+    @include md {
+        margin-right: $sp-5;
+        margin-left: $sp-5;
+    }
+
+    @include xl {
+        margin-right: $sp-14;
+        margin-left: $sp-14;
+    }
+
+    @include xxl {
+        margin-right: $sp-20;
+        margin-left: $sp-20;
+    }
+
+    @include above($contain-offset) {
+        max-width: calc(#{$contain-xxl} - #{$sp-40});
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.contain-xxl {
+    max-width: $contain-xxl;
+    margin-right: $sp-1;
+    margin-left: $sp-1;
+
+    @include md {
+        margin-right: $sp-3;
+        margin-left: $sp-3;
+    }
+
+    @include xl {
+        margin-right: $sp-6;
+        margin-left: $sp-6;
+    }
+
+    @include xxl {
+        margin-right: $sp-8;
+        margin-left: $sp-8;
+    }
+
+    @include above($contain-offset) {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

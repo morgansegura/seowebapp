@@ -1,0 +1,42 @@
+@import 'utilities';
+
+.backdrop {
+    position: fixed;
+    z-index: -1000;
+    opacity: 0;
+    user-select: none;
+    cursor: default;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    &-light:before {
+        background-color: rgba($slate-100, 0.75);
+    }
+    &-dark:before {
+        background-color: rgba($slate-700, 0.75);
+    }
+
+    &.backdrop--is-hidden {
+        transition: opacity 0.3s ease-out;
+    }
+
+    &.backdrop--is-visible {
+        z-index: 1000;
+        opacity: 1;
+
+        transition: opacity 0.3s ease-in;
+    }
+}
