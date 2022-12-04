@@ -57,20 +57,20 @@ export default function Header({
             <header className={clsx(styles.appbar, className)}>
                 <div className={clsx(styles.logo)}>
                     <Link href="/" className={styles.logoLink}>
-
                         <Logo className={styles.icon} />
                         <h1 className={styles.label}>{brand.name}</h1>
-
                     </Link>
                 </div>
 
                 <nav className={styles.nav}>
                     {navigation?.map((item: NavItem) => (
-                        (<Link href={item?.href} key={item?.name} className={styles.item}>
-
+                        <Link
+                            href={item?.href}
+                            key={item?.name}
+                            className={styles.item}
+                        >
                             <span className="sr-only">{item?.name}</span>
-
-                        </Link>)
+                        </Link>
                     ))}
 
                     <Link href="/" className={clsx(styles.item)}>
