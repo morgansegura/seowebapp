@@ -9,6 +9,21 @@ export const seo = {
             'A knowledge of basic SEO can have a noticeable impact. Explore the Google SEO starter guide for an overview of search engine optimization essentials.',
         path: '/',
     },
+    // [User]
+    userScreen: {
+        title: 'SEO Starter Guide: The Basics | Google Search Central  |  Documentation  |  Google Developers',
+        description:
+            'A knowledge of basic SEO can have a noticeable impact. Explore the Google SEO starter guide for an overview of search engine optimization essentials.',
+        path: '/',
+    },
+    // [Admin]
+    adminScreen: {
+        title: 'SEO Starter Guide: The Basics | Google Search Central  |  Documentation  |  Google Developers',
+        description:
+            'A knowledge of basic SEO can have a noticeable impact. Explore the Google SEO starter guide for an overview of search engine optimization essentials.',
+        path: '/',
+    },
+    // [Auth]
     registerScreen: {
         title: 'SEO Starter Guide: The Basics | Google Search Central  |  Documentation  |  Google Developers',
         description:

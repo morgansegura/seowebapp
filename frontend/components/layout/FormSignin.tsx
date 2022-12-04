@@ -3,6 +3,7 @@ import { signin, authenticate } from 'actions/auth';
 import toast from 'react-hot-toast';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
+import { isAuth } from 'actions/auth';
 
 // [Components]
 import Button from '@components/inputs/Button';
@@ -79,7 +80,12 @@ export default function FormRegister({
             } else {
                 authenticate(result, () => {
                     toast.success('Signin successful');
-                    router.push('/');
+
+                    if (isAuth() && isAuth().role === 1) {
+                        router.push('/admin');
+                    } else {
+                        router.push('/user');
+                    }
                 });
             }
         } catch (err) {
