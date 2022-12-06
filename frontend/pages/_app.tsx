@@ -12,10 +12,7 @@ Router.events.on('routeChangeStart', (url) => NProgress.start());
 Router.events.on('routeChangeComplete', (url) => NProgress.done());
 Router.events.on('routeChangeError', (url) => NProgress.done());
 
-export default function App({
-    Component,
-    pageProps: { session, ...pageProps },
-}: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <Component {...pageProps} />

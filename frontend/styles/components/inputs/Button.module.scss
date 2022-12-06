@@ -221,3 +221,51 @@
         color: $slate-50;
     }
 }
+
+.pill {
+    display: inline-flex;
+    @include fontSizing(12px, 24px, 600);
+    @include spacing(px, $sp-1);
+    @include rounded(circle);
+    background-color: $slate-200;
+    color: $slate-900;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-300;
+        color: $black;
+    }
+
+    &:active {
+        background-color: $slate-200;
+        color: $slate-900;
+    }
+}
+
+.pill-with-icon-right {
+    @include flex(center, center);
+    @include fontSizing(12px, 24px, 600);
+    @include spacing(px, $sp-1);
+    @include rounded(circle);
+    background-color: $slate-200;
+    color: $slate-900;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+    &:hover {
+        background-color: $slate-300;
+        color: $black;
+    }
+
+    &:active {
+        background-color: $slate-200;
+        color: $slate-900;
+    }
+
+    svg {
+        order: 1;
+        width: $sp-2;
+        height: $sp-2;
+        @include flex(center, center);
+        margin-left: $sp-0_5;
+    }
+}

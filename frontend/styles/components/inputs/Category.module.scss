@@ -1,0 +1,23 @@
+@import 'utilities';
+
+.title {
+    @include fontSizing(22px, 40px, 600);
+}
+
+.subtitle {
+    @include fontSizing(18px, 24px, 600);
+}
+
+.copy {
+    @include fontSizing(16px, 30px);
+    margin-bottom: $sp-1;
+}
+
+.container {
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $sp-1;
+}

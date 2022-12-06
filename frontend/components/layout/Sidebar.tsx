@@ -131,13 +131,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
                             </Fragment>
                         ))}
 
-                        {isAuth() ? (
-                            <Button
-                                onClick={handleSignout}
-                                style="action-button"
-                                label="Signout"
-                            />
-                        ) : (
+                        {isAuth() === false ? (
                             <>
                                 <Button
                                     href="/register"
@@ -150,6 +144,12 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
                                     label="Signin"
                                 />
                             </>
+                        ) : (
+                            <Button
+                                onClick={handleSignout}
+                                style="action-button"
+                                label="Signout"
+                            />
                         )}
                     </div>
                 </div>
