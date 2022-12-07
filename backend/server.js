@@ -37,9 +37,9 @@ if (process.env.NODE_ENV === 'development') {
 // [Routes Middleware]
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
-app.use('/api', blogRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', tagRoutes);
+app.use('/api', blogRoutes);
 
 // [Port]
 const port = process.env.PORT || 4000;
